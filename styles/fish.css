@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #7cb;
+  color: #000;
+  font-family: Helvetica, sans-serif;
+  margin: 4rem;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+p {
+  margin: 2rem;
+}
+
+article {
+  margin: auto;
+}
+#container {
+  align-items: center;
+}
+
+#congator {
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    #container {
+      width: 100%;
+    }
+    #congator {
+      width: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    body {
+      margin: 1rem;
+    }
+}

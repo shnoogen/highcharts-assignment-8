@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Global Young Adult Literacy Rates </title>
+
+  <!-- stylesheets go here -->
+  <link rel="stylesheet" href="styles/fish.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <!-- themes for things here -->
+<script src="https://code.highcharts.com/themes/sand-signika.js"></script>
+</head>
+<!-- concept: comparing gender and literacy, comparing classroom size ratio and literacy -->
+
+<body>
+
+  <h1> Global Young Adult Literacy Rates </h1>
+<article>
+  <p> Literacy is a common marker for development in country's populations. It varies from country to country and from year to year. Many people in first world countries assume that most countries have high literacies. The discrepancies between countries' literacies are not often talked about. The following graphs examine the literacy rates in three different countries from three different regions of the globe. The information specifically looks at populations aged 15-24 years old.</p>
+
+  <p> The three countries chosen come from the Middle East, Africa, and Europe. These countries are different in many ways, with their societies functioning differently. The data reflects this.</p>
+<div id="container" style="width:60%; height:400px;"></div>
+
+<!-- chart chart chart first chart chart about global literacy in general -->
+<script>
+Highcharts.chart('container', {
+
+    title: {
+        text: 'Young Adult Literacy (15-24 y/o), 1980-2015'
+    },
+
+    subtitle: {
+        text: 'Source: UN UIS Centre'
+    },
+		xAxis: {
+    	tickPositions: [1980, 2001, 2011, 2015]
+
+    },
+
+    yAxis: {
+     	min: 0,
+      max: 100,
+        title: {
+            text: 'Literacy (%)'
+ }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+
+    series: [{
+        name: 'Afghanistan',
+        data: [30.06, 32.31, 46.99, 58.15]
+    }, {
+        name: 'Madagascar',
+        data: [70.23, 64.94, 65.31, 65.07]
+    }, {
+        name: 'Italy',
+        data: [99.64, 99.81, 99.86, 99.90]
+    },
+    ],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+});
+</script>
+<p> As you can see, the common trend for young adult literacy is to increase as you move towards more recent years. This can be accredited to higher accesibility to the internet. The dissemination of information across the net has allowed more people in more places to learn. </p>
+
+<p> The following graph takes another factor into account: gender. The wage gap is a hot topic right now in gender politics. There is an education gap as well in certain countries where women's rights are not prioritized. It is interesting to not only see the discrepancies between countries but also between compatriot genders.</p>
+
+<div id="congator" style="width:60%; height:400px;"></div>
+
+<script>
+Highcharts.chart('congator', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Youth Literacy by Gender (15-24 y/o), 2015'
+    },
+    subtitle: {
+        text: 'Source: UN UIS Centre'
+    },
+    xAxis: {
+        categories: [
+            'Afghanistan',
+            'Madagascar',
+            'Italy'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max: 100,
+        title: {
+            text: 'Literacy (%)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} % Literate</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Male',
+        data: [69.4, 65.4, 99.9]
+
+    }, {
+        name: 'Female',
+        data: [46.1, 64.8, 99.9]
+
+    }, {
+        name: 'All Genders',
+        data: [58.6, 65.1, 99.9]
+    }]
+});
+</script>
+</article>
+</body>
+</html>
+
+<!-- don't forget to go back and check: title, heading (h1), theme, source for datasets-->
